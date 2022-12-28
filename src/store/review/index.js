@@ -27,6 +27,22 @@ const reviewSlice = createSlice({
 
       state.status = "success";
     },
+
+    addReview: (state, { payload }) => {
+      const { id, userId, text, rating } = payload;
+      const reviews = {
+        ...state.entities,
+        [id]: {
+          id: id,
+          userId: userId,
+          text: text,
+          rating: rating,
+        },
+      };
+
+      state.entities = reviews;
+      state.ids = [...state.ids, id];
+    },
   },
 });
 

@@ -1,8 +1,7 @@
-import React from "react";
-
-import styles from "./styles.module.css";
-import { RestaurantTabsContainer } from "../../containers/RestaurantTabs/RestaurantTabsContainer";
 import { Outlet } from "react-router-dom";
+import PropTypes from "prop-types";
+import { RestaurantTabsContainer } from "../../containers/RestaurantTabs/RestaurantTabsContainer";
+import styles from "./styles.module.css";
 
 export const Restaurants = ({ restaurantIds }) => {
   if (!restaurantIds?.length) {
@@ -17,4 +16,8 @@ export const Restaurants = ({ restaurantIds }) => {
       </div>
     </div>
   );
+};
+
+Restaurants.propTypes = {
+  restaurantIds: PropTypes.array,
 };

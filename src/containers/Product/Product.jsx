@@ -1,7 +1,8 @@
-import React, { useCallback } from "react";
-import { Product } from "../../components/Product/Product";
+import { useCallback } from "react";
 import { useDispatch } from "react-redux";
+import PropTypes from "prop-types";
 import useProductWithCount from "../../hooks/useProductWithCount";
+import { Product } from "../../components/Product/Product";
 import basketSlice from "../../store/basket";
 
 const ProductContainer = ({ productId, className }) => {
@@ -27,6 +28,11 @@ const ProductContainer = ({ productId, className }) => {
       className={className}
     />
   );
+};
+
+ProductContainer.propTypes = {
+  productId: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default ProductContainer;

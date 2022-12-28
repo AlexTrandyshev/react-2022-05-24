@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-
-import styles from "./styles.module.css";
+import { Outlet } from "react-router-dom";
+import PropTypes from "prop-types";
 import { Rating } from "../Rating/Rating";
-import { MenuContainer } from "../../containers/Menu/Menu";
-import { ReviewsContainer } from "../../containers/Reviews/Reviews";
+import { TabsRestaurant } from "../TabsRestaurant/TabsRestaurant";
+import styles from "./styles.module.css";
 
 export const Restaurant = ({ restaurant, rating }) => {
   return (
@@ -13,11 +12,15 @@ export const Restaurant = ({ restaurant, rating }) => {
         <Rating value={rating} />
       </div>
       <div className={styles.detailedInfo}>
-        <MenuContainer restaurantId={restaurant.id} className={styles.menu} />
-        <div className={styles.reviews}>
-          <ReviewsContainer restaurantId={restaurant.id} />
-        </div>
+        <TabsRestaurant />
+
+        <Outlet />
       </div>
     </div>
   );
+};
+
+Restaurant.propTypes = {
+  restaurant: PropTypes.object,
+  rating: PropTypes.number,
 };

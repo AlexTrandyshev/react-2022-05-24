@@ -28,6 +28,12 @@ const restaurantSlice = createSlice({
 
       state.status = "success";
     },
+
+    addReview: (state, { payload }) => {
+      const { id, idreview } = payload;
+
+      state.entities[id].reviews = [...state.entities[id].reviews, idreview];
+    },
   },
 });
 

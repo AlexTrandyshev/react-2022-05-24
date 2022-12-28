@@ -9,9 +9,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { RestaurantsPage } from "./pages/RestaurantsPage/RestaurantsPage";
 import { NotFoundPage } from "./pages/NotFounPage/NotFoundPage";
 import RestaurantContainer from "./containers/Restaurant/Restaurant";
-import { MenuPage } from "./pages/MenuPage/MenuPage";
-import { MenuDetailPage } from "./pages/MenuDetailPage/MenuDetailPage";
-import { MenuDetailContainer } from "./containers/MenuDetaiContainer/MenuDetaiContainer";
+import { ProductsPage } from "./pages/ProoductsPage/ProductsPage";
+import { ProductDetailsPage } from "./pages/ProductDetailsPage/ProductDetailsPage";
+import { MenuContainer } from "./containers/Menu/Menu";
+import { ReviewsContainer } from "./containers/Reviews/Reviews";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -21,30 +22,20 @@ root.render(
       <Routes>
         <Route index element={<MainPage />} />
         <Route path="/restaurants" element={<RestaurantsPage />}>
-          <Route index element={<span>Select restaurant</span>} />
-          <Route path=":id" element={<RestaurantContainer />} />
+          <Route
+            index
+            element={<h3 style={{ textAlign: "center" }}>Select restaurant</h3>}
+          />
+          <Route path=":id" element={<RestaurantContainer />}>
+            <Route index element={<MenuContainer />} />
+            <Route path="reviews" element={<ReviewsContainer />} />
+          </Route>
         </Route>
         <Route path="/basket" element={<BasketPage />} />
-        <Route path="/allmenu" element={<MenuPage />} />
-        <Route path="/allmenu" element={<MenuDetailPage />}>
-          <Route path=":id" element={<MenuDetailContainer />} />
-        </Route>
+        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/product/:id" element={<ProductDetailsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   </Provider>
 );
-
-// React.createElement('div', {
-//     children: [
-//         React.createElement('span', {
-//             children: 'Hello!'
-//         }),
-//         React.createElement('div', {
-//             children: [
-//                 React.createElement('span', {children: 'World!'}),
-//                 React.createElement('span', {children: 'Caramba!'})
-//             ]
-//         }),
-//     ],
-// })

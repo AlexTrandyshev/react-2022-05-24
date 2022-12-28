@@ -4,8 +4,6 @@ import userSlice from "../index";
 export function loadUsersIfNotExist() {
   return function (dispatch, getState) {
     if (selectUserIds(getState())?.length > 0) {
-      console.log("already loaded");
-
       return;
     }
 

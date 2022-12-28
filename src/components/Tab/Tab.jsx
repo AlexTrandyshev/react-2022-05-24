@@ -1,9 +1,7 @@
-import React from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
-
-import styles from "./styles.module.css";
 import { NavLink } from "react-router-dom";
+import styles from "./styles.module.css";
 
 export const Tab = ({ label, id, className }) => {
   return (

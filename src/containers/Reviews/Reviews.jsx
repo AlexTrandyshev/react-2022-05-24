@@ -1,14 +1,16 @@
-import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { Reviews } from "../../components/Reviews/component";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import {
   selectIsReviewsFailed,
   selectIsReviewsLoading,
 } from "../../store/review/selectors";
-import { loadUsersIfNotExist } from "../../store/user/thunks/load-users";
 import { selectRestaurantReviewsById } from "../../store/restaurant/selectors";
+import { loadUsersIfNotExist } from "../../store/user/thunks/load-users";
+import { Reviews } from "../../components/Reviews/component";
 
-export const ReviewsContainer = ({ restaurantId, ...props }) => {
+export const ReviewsContainer = () => {
+  const { id: restaurantId } = useParams();
   const dispatch = useDispatch();
   const isReviewsLoading = useSelector(selectIsReviewsLoading);
   const isReviewsFailed = useSelector(selectIsReviewsFailed);
@@ -27,6 +29,6 @@ export const ReviewsContainer = ({ restaurantId, ...props }) => {
   return isReviewsLoading ? (
     <span>Loading</span>
   ) : (
-    <Reviews reviewIds={reviewIds} {...props} />
+    <Reviews reviewIds={reviewIds} />
   );
 };

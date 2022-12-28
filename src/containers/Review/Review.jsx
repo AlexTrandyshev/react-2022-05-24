@@ -1,5 +1,5 @@
-import React from "react";
 import { useSelector } from "react-redux";
+import PropTypes from "prop-types";
 import { selectReviewById } from "../../store/review/selectors";
 import { MemoReview } from "../../components/Review/Review";
 
@@ -20,6 +20,11 @@ const ReviewContainer = ({ reviewId, className }) => {
       className={className}
     />
   );
+};
+
+ReviewContainer.propTypes = {
+  reviewId: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default ReviewContainer;

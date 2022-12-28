@@ -1,6 +1,6 @@
 import Logo from "./img/logo.svg";
-import styles from "./styles.module.css";
 import { Link } from "react-router-dom";
+import styles from "./styles.module.css";
 
 export const Header = () => {
   return (
@@ -14,8 +14,8 @@ export const Header = () => {
       <Link to="/basket" className={styles.basketLink}>
         Basket
       </Link>
-      <Link to="/allmenu" className={styles.allMenuLink}>
-        Menu Restaurants
+      <Link to="/products" className={styles.allMenuLink}>
+        Products
       </Link>
     </header>
   );

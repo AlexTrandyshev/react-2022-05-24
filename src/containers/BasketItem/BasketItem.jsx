@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { BasketItem } from "../../components/BasketItem/BasketItem";
 import useProductWithCount from "../../hooks/useProductWithCount";
 
@@ -11,4 +12,9 @@ export const BasketItemContainer = ({ productId, className }) => {
       className={className}
     />
   );
+};
+
+BasketItemContainer.propTypes = {
+  productId: PropTypes.string,
+  className: PropTypes.string,
 };

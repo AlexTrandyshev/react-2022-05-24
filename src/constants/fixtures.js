@@ -5,21 +5,21 @@ export const restaurants = [
     menu: [
       {
         id: "d75f762a-eadd-49be-8918-ed0daa8dd024",
-        name: "Chicken tikka masala",
+        name: "Nordic tea",
         price: 12,
-        ingredients: ["chicken", "rice"],
+        ingredients: ["mango", "dragon fruit"],
       },
       {
         id: "c3cb8f92-a2ed-4716-92a1-b6ea813e9049",
-        name: "Naan",
+        name: "Paleta ice cream Mango",
         price: 3,
-        ingredients: ["bread"],
+        ingredients: ["mango"],
       },
       {
         id: "bd129641-c0eb-432b-84b6-8b81d2930358",
-        name: "Samosa",
+        name: "Paleta ice cream coconut & belgian chocolate",
         price: 8,
-        ingredients: ["chicken", "bread"],
+        ingredients: ["coconut", "belgian chocolate"],
       },
     ],
     reviews: [
@@ -43,28 +43,28 @@ export const restaurants = [
     menu: [
       {
         id: "25402233-0095-49ea-9939-1e67ed89ffb9",
-        name: "Margarita",
+        name: "Coffee & Orange",
         price: 9,
-        ingredients: ["bread", "cheese", "tomatoes"],
+        ingredients: ["mango"],
       },
       {
         id: "90902233-0095-49ea-9939-1e67ed89ffb9",
-        name: "Chef pizza",
+        name: "Pomegranate & Cherry",
         price: 10,
-        ingredients: ["bread", "cheese", "tomatoes", "chicken"],
+        ingredients: ["pomegranate", "сherry"],
       },
     ],
     reviews: [
       {
         id: "53b642d7-5e86-4717-a466-0640a1dee076",
         user: "Diana",
-        text: "Perfect Margarita",
+        text: "Perfect",
         rating: 5,
       },
       {
         id: "c27ab88e-375c-4e98-aa94-8a180150a797",
         user: "Sam",
-        text: "No burgers again. But Chef Pizza is the best one",
+        text: "No burgers again. But Pomegranate & Cherry is the best one",
         rating: 4,
       },
       {
@@ -81,21 +81,21 @@ export const restaurants = [
     menu: [
       {
         id: "08c9ffa0-d003-4310-9e15-20978743296e",
-        name: "Cinnamon buns",
+        name: "Thai fruit",
         price: 5,
-        ingredients: ["bread"],
+        ingredients: ["fruits"],
       },
       {
         id: "64a4967c-2080-4a99-9074-4655a4569a95",
-        name: "Semlor",
+        name: "Cream & Kitchen",
         price: 2,
-        ingredients: ["bread", "cream"],
+        ingredients: ["all fruits"],
       },
       {
         id: "4bc8528e-26d1-46c3-a522-8e18d10c8c84",
-        name: "Saffron bun",
+        name: "Ice cream Kashers",
         price: 4,
-        ingredients: ["bread"],
+        ingredients: ["porridge", "all fruit"],
       },
     ],
     reviews: [
@@ -113,15 +113,15 @@ export const restaurants = [
     menu: [
       {
         id: "6c02c2ce-b868-4191-b4a7-8686429f4bac",
-        name: "Flat Iron Steak",
+        name: "Franklin popcorn",
         price: 10,
-        ingredients: ["beef"],
+        ingredients: ["fruits", "popcorn"],
       },
       {
         id: "99bb6fbb-e53b-4b7e-b9c2-23b63b77385d",
-        name: "Flat Iron Burger",
+        name: "Сharlotte with apples and ice cream",
         price: 10,
-        ingredients: ["bread", "beef"],
+        ingredients: ["charlotte", "apples", "ice cream"],
       },
     ],
     reviews: [

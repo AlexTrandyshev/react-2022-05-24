@@ -1,6 +1,5 @@
-import React from "react";
 import classnames from "classnames";
-
+import PropTypes from "prop-types";
 import styles from "./styles.module.css";
 
 export const Product = ({
@@ -32,4 +31,12 @@ export const Product = ({
       </div>
     </div>
   );
+};
+
+Product.propTypes = {
+  name: PropTypes.string,
+  productCount: PropTypes.number,
+  removeProduct: PropTypes.func,
+  addProduct: PropTypes.func,
+  className: PropTypes.string,
 };

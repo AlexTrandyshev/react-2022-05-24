@@ -27,6 +27,20 @@ const userSlice = createSlice({
 
       state.status = "success";
     },
+
+    addUser: (state, { payload }) => {
+      const { id, name } = payload;
+      const users = {
+        ...state.entities,
+        [id]: {
+          id: id,
+          name: name,
+        },
+      };
+
+      state.entities = users;
+      state.ids = [...state.ids, id];
+    },
   },
 });
 

@@ -1,15 +1,12 @@
-import { Restaurants } from "../../components/Restaurants/Restaurants";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectIsFailed,
   selectIsLoading,
   selectRestaurantIds,
 } from "../../store/restaurant/selectors";
-import { useEffect } from "react";
-import {
-  loadProductsByRestaurantIdIfNotExist,
-  loadRestaurantsIfNotExist,
-} from "../../store/restaurant/thunks/load-restaurants";
+import { loadRestaurantsIfNotExist } from "../../store/restaurant/thunks/load-restaurants";
+import { Restaurants } from "../../components/Restaurants/Restaurants";
 
 const RestaurantsContainer = () => {
   const dispatch = useDispatch();
@@ -17,15 +14,9 @@ const RestaurantsContainer = () => {
   const isLoading = useSelector(selectIsLoading);
   const isFailed = useSelector(selectIsFailed);
 
-  // load restaurants with thunk
   useEffect(() => {
     dispatch(loadRestaurantsIfNotExist());
   }, []);
-
-  // load restaurants with middleware
-  // useEffect(() => {
-  //   dispatch(loadRestaurants());
-  // }, []);
 
   if (isLoading) {
     return <span>Loading...</span>;
